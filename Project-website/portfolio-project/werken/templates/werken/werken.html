@@ -1,0 +1,19 @@
+
+{% extends 'index.html' %}
+{% block content %}
+ 
+{% for werken in werken.all %} 
+<div class="item-container">
+<div class="image-container">
+    {% if werken.image %}
+ <img class="image-size" src="{{ werken.image.url }}" />
+ {% endif %}
+</div>
+<div class="text-container">
+ <h6>{{ werken.body }}</h6>
+ <a href="http://localhost:8000/werken/{{ werken.id }}"><button>Details</button></a>
+ </div>
+</div>
+{% endfor %}
+
+{% endblock %}

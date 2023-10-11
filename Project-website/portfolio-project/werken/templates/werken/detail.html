@@ -1,0 +1,22 @@
+{% extends 'index.html' %} {% block content %}
+
+<div class="detail-flex-container">
+  <h1 class="detail-title">{{ werk.title }}</h1>
+
+  <div class="detail-image-container">
+    {% if werk.icon %}
+    <img src="{{ werk.icon.url }}" />
+    {% endif%}
+    {% if werk.image%}
+    <img src="{{ werk.image.url }}" />
+    {% endif %}
+  </div>
+  <div class="detail-items-container">
+    {{ werk.pub_date_pretty }}<br />
+    {{ werk.summary }}<br />
+    {{ werk.votes_total }}<br />
+    {{ werk.hunter.username }}<br />
+  </div>
+</div>
+
+{% endblock %}
